@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nifi03
+  namespace: default
+  labels:
+    app: nifi03
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nifi03
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nifi03
+    spec:
+      containers:
+        - env:
+            - name: NIFI_CLUSTER_IS_NODE
+              value: "true"
+            - name: NIFI_CLUSTER_NODE_PROTOCOL_PORT
+              value: "8082"
+            - name: NIFI_ELECTION_MAX_WAIT
+              value: 1 min
+            - name: NIFI_SENSITIVE_PROPS_KEY
+              value: tfmmiguel24nifi2
+            - name: NIFI_WEB_HTTP_PORT
+              value: "8080"
+            - name: NIFI_ZK_CONNECT_STRING
+              value: zookeeper:2181
+          image: apache/nifi:latest
+          name: node3
+          ports:
+            - containerPort: 8080
+              hostPort: 6978
+              protocol: TCP
+          resources: {}
+          # volumeMounts:
+          #   - mountPath: /opt/nifi/nifi-current/files/csv
+          #     name: nifi03-claim0
+      restartPolicy: Always
+      # volumes:
+      #   - name: nifi03-claim0
+      #     persistentVolumeClaim:
+      #       claimName: nifi03-claim0
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi03
+  namespace: default
+spec:
+  selector:
+    app: nifi03
+  ports:
+    - name: "6978"
+      port: 6978
+      targetPort: 8080
+
+status:
+  loadBalancer: {}

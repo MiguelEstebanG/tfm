@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nifi01
+  namespace: default
+  labels:
+    app: nifi01
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nifi01
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nifi01
+    spec:
+      containers:
+        - env:
+            - name: NIFI_CLUSTER_IS_NODE
+              value: "true"
+            - name: NIFI_CLUSTER_NODE_PROTOCOL_PORT
+              value: "8082"
+            - name: NIFI_ELECTION_MAX_WAIT
+              value: 1 min
+            - name: NIFI_SENSITIVE_PROPS_KEY
+              value: tfmmiguel24nifi1
+            - name: NIFI_WEB_HTTP_PORT
+              value: "8080"
+            - name: NIFI_ZK_CONNECT_STRING
+              value: zookeeper:2181
+          image: apache/nifi:latest
+          name: node1
+          ports:
+            - containerPort: 8080
+              hostPort: 6980
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+        
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi01
+  namespace: default
+  
+spec:
+  selector:
+    app: nifi01
+  ports:
+    - name: "6980"
+      port: 6980
+      targetPort: 8080
+
+status:
+  loadBalancer: {}
