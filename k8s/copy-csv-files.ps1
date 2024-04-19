@@ -1,4 +1,4 @@
-Set-Location 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\carpetas_varias\input'
+Set-Location '..\carpetas_varias\input'
 
 # Copiar el archivo csv al nodo 1
 kubectl exec -it nifi01-7c445c6776-2jgcr -- mkdir /opt/nifi/nifi-current/csv
