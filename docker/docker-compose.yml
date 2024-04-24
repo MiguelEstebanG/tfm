@@ -62,7 +62,8 @@ services:
     networks:
       nifi_network:
         ipv4_address: 172.23.0.10
-
+    volumes:
+      - ./scripts/init_mongo.sh:/scripts/init_mongo.sh
 networks:
   nifi_network:
     driver: bridge
