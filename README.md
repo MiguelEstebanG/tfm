@@ -47,7 +47,7 @@ Tras esto se hace uso de los diferentes archivos yaml para levantar el entorno:
  Para desplegar la instancia de mongo:
 
   ```
-  kubectl apply -f .\mongo-deployment.yaml
+  kubectl apply -f .\mongo.yaml
   ```
 
  Para desplegar el entorno zookeeper:
