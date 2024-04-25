@@ -17,7 +17,7 @@ docker compose up
 ```
 
 <p align="justify">
-Por último, para terminar de configurar el entorno de   forma correcta, se han habilitado dos scripts de configuración. El primero <em>init_mongo.sh</em>, tiene como objetivo inicializar la base de datos en la que se almacenarán los datos cargados por NiFi de forma automática. Este script se carga en el contenedor de mongo para su posterior empleo. El segundo script facilitado, <em>configuracion_entorno_docker.ps1</em>, está pensado para su ejecución desde el PowerShell de Windows, para ejecutar el script de inicialización y para otorgar todos los permisos necesarios a los archivos csv para que puedan ser leídos por NiFi.
+Por último, para terminar de configurar el entorno de forma correcta, se han habilitado dos scripts de configuración. El primero <em>init_mongo.sh</em>, tiene como objetivo inicializar la base de datos en la que se almacenarán los datos cargados por NiFi de forma automática. Este script se carga en el contenedor de mongo para su posterior empleo. El segundo script facilitado, <em>configuracion_entorno_docker.ps1</em>, está pensado para su ejecución desde el PowerShell de Windows, para ejecutar el script de inicialización y para otorgar todos los permisos necesarios a los archivos csv para que puedan ser leídos por NiFi.
 </p>
 
 ```
@@ -66,11 +66,12 @@ Tras esto se hace uso de los diferentes archivos yaml para levantar el entorno:
 
 
 <p align="justify">
-Una vez desplegadas todas las instancias correspondientes, se proporciona un script <em>copy-csv-files.ps1</em>, pensado para su ejecución desde el PowerShell de Windows, que permitirá "enviar" a los diferentes pods de los nodos de NiFi el archivo csv y otorgará a estos archivos todos los permisos necesarios para que puedan ser leídos por NiFi.   
+Una vez desplegadas todas las instancias correspondientes, se proporciona un script <em>configuracion_entorno_k8s.ps1</em>, pensado para su ejecución desde el PowerShell de Windows, que permitirá "enviar" a los diferentes pods de los nodos de NiFi el archivo csv y otorgará a estos archivos todos los permisos necesarios para que puedan ser leídos por NiFi. Además, mediante el script <em>init_mongo.sh</em> se realiza la configuración de la base de datos de mongo. Para ello, es necesario realizar lo siguiente: 
 </p>
 
 ```
-.\copy-csv-files.ps1
+cd scripts
+.\configuracion_entorno_k8s.ps1
 ```
 
 
