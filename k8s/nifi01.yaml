@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: nifi01
   namespace: default
@@ -7,12 +7,13 @@ metadata:
     app: nifi01
 
 spec:
+  serviceName: "nifi02"
   replicas: 1
   selector:
     matchLabels:
       app: nifi01
-  strategy:
-    type: Recreate
+  # strategy:
+  #   type: Recreate
   template:
     metadata:
       labels:

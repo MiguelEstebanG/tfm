@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: nifi03
   namespace: default
@@ -7,12 +7,13 @@ metadata:
     app: nifi03
 
 spec:
+  serviceName: "nifi03"
   replicas: 1
   selector:
     matchLabels:
       app: nifi03
-  strategy:
-    type: Recreate
+  # strategy:
+  #   type: Recreate
   template:
     metadata:
       labels:
@@ -39,14 +40,7 @@ spec:
               hostPort: 6978
               protocol: TCP
           resources: {}
-          # volumeMounts:
-          #   - mountPath: /opt/nifi/nifi-current/files/csv
-          #     name: nifi03-claim0
       restartPolicy: Always
-      # volumes:
-      #   - name: nifi03-claim0
-      #     persistentVolumeClaim:
-      #       claimName: nifi03-claim0
 status: {}
 
 ---
