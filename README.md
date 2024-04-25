@@ -59,7 +59,9 @@ Tras esto se hace uso de los diferentes archivos yaml para levantar el entorno:
  Para desplegar los tres nodos correspondientes:
 
   ```
-  kubectl apply -f .\nifi01.yaml .\nifi02.yaml .\nifi03.yaml 
+  kubectl apply -f .\nifi01.yaml
+  kubectl apply -f .\nifi02.yaml
+  kubectl apply -f .\nifi03.yaml
   ```
 
 
