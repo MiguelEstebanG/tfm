@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.3">
-    <description>tfm template
-</description>
-    <groupId>cc80eab0-018e-1000-ccde-73ef332746c4</groupId>
-    <name>TFM_Docker template</name>
+    <description></description>
+    <groupId>19930294-018f-1000-3e6a-3fa68ed60cd6</groupId>
+    <name>template_docker_NIFI</name>
     <snippet>
         <connections>
-            <id>239e6cf1-2eb6-313c-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>5591f243-891f-3422-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>3000000</backPressureObjectThreshold>
+            <destination>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>501b41e7-35de-31b1-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <prioritizers>org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer</prioritizers>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>ce0bf135-bc29-3a95-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>e65cda05-5055-3cd4-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>30 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>3000000</backPressureObjectThreshold>
             <destination>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>973d60b4-2ed2-334c-0000-000000000000</id>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>f09c29d1-13b2-37b6-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -25,20 +50,20 @@
             <prioritizers>org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer</prioritizers>
             <selectedRelationships>success</selectedRelationships>
             <source>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>67fa5d7f-c971-3529-0000-000000000000</id>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>83043986-29b9-3609-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <connections>
-            <id>e60304d9-c604-368b-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>f53850f7-4411-3d84-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>10 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>3000000</backPressureObjectThreshold>
             <destination>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>575877c1-7b1b-3e31-0000-000000000000</id>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>ce0bf135-bc29-3a95-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -51,41 +76,15 @@
             <prioritizers>org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer</prioritizers>
             <selectedRelationships>splits</selectedRelationships>
             <source>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>973d60b4-2ed2-334c-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </source>
-            <zIndex>0</zIndex>
-        </connections>
-        <connections>
-            <id>f98573ad-3822-3c57-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
-            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-            <backPressureObjectThreshold>3000000</backPressureObjectThreshold>
-            <destination>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>71178470-16f7-3997-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </destination>
-            <flowFileExpiration>0 sec</flowFileExpiration>
-            <labelIndex>1</labelIndex>
-            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-            <name></name>
-            <prioritizers>org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer</prioritizers>
-            <selectedRelationships>success</selectedRelationships>
-            <source>
-                <groupId>88f0d61b-220b-3382-0000-000000000000</groupId>
-                <id>575877c1-7b1b-3e31-0000-000000000000</id>
+                <groupId>f70f2958-cb7c-3efe-0000-000000000000</groupId>
+                <id>f09c29d1-13b2-37b6-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <controllerServices>
-            <id>2a03844a-848e-3857-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>277de66c-2e2e-360a-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <bulletinLevel>WARN</bulletinLevel>
             <bundle>
                 <artifact>nifi-record-serialization-services-nar</artifact>
@@ -301,8 +300,17 @@
                     <value>csv-header-derived</value>
                 </entry>
                 <entry>
+                    <key>schema-registry</key>
+                </entry>
+                <entry>
                     <key>schema-name</key>
                     <value>${schema.name}</value>
+                </entry>
+                <entry>
+                    <key>schema-version</key>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
                 </entry>
                 <entry>
                     <key>schema-text</key>
@@ -311,6 +319,15 @@
                 <entry>
                     <key>csv-reader-csv-parser</key>
                     <value>commons-csv</value>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
                 </entry>
                 <entry>
                     <key>CSV Format</key>
@@ -341,6 +358,12 @@
                     <value>\</value>
                 </entry>
                 <entry>
+                    <key>Comment Marker</key>
+                </entry>
+                <entry>
+                    <key>Null String</key>
+                </entry>
+                <entry>
                     <key>Trim Fields</key>
                     <value>true</value>
                 </entry>
@@ -361,8 +384,8 @@
             <type>org.apache.nifi.csv.CSVReader</type>
         </controllerServices>
         <controllerServices>
-            <id>8c80abe0-c7bf-3be6-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>b24b34d7-afc7-3d3d-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <bulletinLevel>WARN</bulletinLevel>
             <bundle>
                 <artifact>nifi-record-serialization-services-nar</artifact>
@@ -516,6 +539,9 @@
                     <value>no-schema</value>
                 </entry>
                 <entry>
+                    <key>schema-cache</key>
+                </entry>
+                <entry>
                     <key>schema-protocol-version</key>
                     <value>1</value>
                 </entry>
@@ -524,12 +550,30 @@
                     <value>inherit-record-schema</value>
                 </entry>
                 <entry>
+                    <key>schema-registry</key>
+                </entry>
+                <entry>
                     <key>schema-name</key>
                     <value>${schema.name}</value>
                 </entry>
                 <entry>
+                    <key>schema-version</key>
+                </entry>
+                <entry>
+                    <key>schema-branch</key>
+                </entry>
+                <entry>
                     <key>schema-text</key>
                     <value>${avro.schema}</value>
+                </entry>
+                <entry>
+                    <key>Date Format</key>
+                </entry>
+                <entry>
+                    <key>Time Format</key>
+                </entry>
+                <entry>
+                    <key>Timestamp Format</key>
                 </entry>
                 <entry>
                     <key>Pretty Print JSON</key>
@@ -556,293 +600,8 @@
             <type>org.apache.nifi.json.JsonRecordSetWriter</type>
         </controllerServices>
         <processors>
-            <id>575877c1-7b1b-3e31-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
-            <position>
-                <x>0.0</x>
-                <y>552.0</y>
-            </position>
-            <bundle>
-                <artifact>nifi-standard-nar</artifact>
-                <group>org.apache.nifi</group>
-                <version>1.25.0</version>
-            </bundle>
-            <config>
-                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
-                <bulletinLevel>WARN</bulletinLevel>
-                <comments></comments>
-                <concurrentlySchedulableTaskCount>6</concurrentlySchedulableTaskCount>
-                <descriptors>
-                    <entry>
-                        <key>jolt-transform</key>
-                        <value>
-                            <name>jolt-transform</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>jolt-custom-class</key>
-                        <value>
-                            <dependencies>
-<dependentValues>jolt-transform-custom</dependentValues>
-<propertyName>jolt-transform</propertyName>
-                            </dependencies>
-                            <name>jolt-custom-class</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>jolt-custom-modules</key>
-                        <value>
-                            <dependencies>
-<dependentValues>jolt-transform-custom</dependentValues>
-<propertyName>jolt-transform</propertyName>
-                            </dependencies>
-                            <name>jolt-custom-modules</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>jolt-spec</key>
-                        <value>
-                            <name>jolt-spec</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Transform Cache Size</key>
-                        <value>
-                            <name>Transform Cache Size</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>pretty_print</key>
-                        <value>
-                            <name>pretty_print</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Max String Length</key>
-                        <value>
-                            <name>Max String Length</name>
-                        </value>
-                    </entry>
-                </descriptors>
-                <executionNode>ALL</executionNode>
-                <lossTolerant>false</lossTolerant>
-                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
-                <penaltyDuration>30 sec</penaltyDuration>
-                <properties>
-                    <entry>
-                        <key>jolt-transform</key>
-                        <value>jolt-transform-chain</value>
-                    </entry>
-                    <entry>
-                        <key>jolt-spec</key>
-                        <value>[{
-	"operation": "shift",
-	"spec": {
-		"EventID": "id",
-		"Latitude": "geoLocation.lat",
-		"Longitude": "geoLocation.lon",
-		"Depth": "depth",
-      	"Author" : "author",
-		"MagType": "magnitude.type",
-      	"Magnitude": "magnitude.grade",
-		"EventLocationName": "place"
-	}
-}, {
-	"operation": "modify-overwrite-beta",
-	"spec": {
-		"geoLocation": "=concat(@(1,geoLocation.lat), ', ', @(1,geoLocation.lon))",
-      	"magnitude": "=concat(@(1,magnitude.type), ', ', @(1,magnitude.grade))"
-	}
-}]</value>
-                    </entry>
-                    <entry>
-                        <key>Transform Cache Size</key>
-                        <value>1</value>
-                    </entry>
-                    <entry>
-                        <key>pretty_print</key>
-                        <value>false</value>
-                    </entry>
-                    <entry>
-                        <key>Max String Length</key>
-                        <value>20 MB</value>
-                    </entry>
-                </properties>
-                <retryCount>10</retryCount>
-                <runDurationMillis>0</runDurationMillis>
-                <schedulingPeriod>0 sec</schedulingPeriod>
-                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                <yieldDuration>1 sec</yieldDuration>
-            </config>
-            <executionNodeRestricted>false</executionNodeRestricted>
-            <name>JoltTransformJSON</name>
-            <relationships>
-                <autoTerminate>true</autoTerminate>
-                <name>failure</name>
-                <retry>false</retry>
-            </relationships>
-            <relationships>
-                <autoTerminate>false</autoTerminate>
-                <name>success</name>
-                <retry>false</retry>
-            </relationships>
-            <state>RUNNING</state>
-            <style/>
-            <type>org.apache.nifi.processors.standard.JoltTransformJSON</type>
-        </processors>
-        <processors>
-            <id>67fa5d7f-c971-3529-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
-            <position>
-                <x>0.0</x>
-                <y>0.0</y>
-            </position>
-            <bundle>
-                <artifact>nifi-standard-nar</artifact>
-                <group>org.apache.nifi</group>
-                <version>1.25.0</version>
-            </bundle>
-            <config>
-                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
-                <bulletinLevel>WARN</bulletinLevel>
-                <comments></comments>
-                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-                <descriptors>
-                    <entry>
-                        <key>Input Directory</key>
-                        <value>
-                            <name>Input Directory</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>File Filter</key>
-                        <value>
-                            <name>File Filter</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Path Filter</key>
-                        <value>
-                            <name>Path Filter</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Batch Size</key>
-                        <value>
-                            <name>Batch Size</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Keep Source File</key>
-                        <value>
-                            <name>Keep Source File</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Recurse Subdirectories</key>
-                        <value>
-                            <name>Recurse Subdirectories</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Polling Interval</key>
-                        <value>
-                            <name>Polling Interval</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Ignore Hidden Files</key>
-                        <value>
-                            <name>Ignore Hidden Files</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Minimum File Age</key>
-                        <value>
-                            <name>Minimum File Age</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Maximum File Age</key>
-                        <value>
-                            <name>Maximum File Age</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Minimum File Size</key>
-                        <value>
-                            <name>Minimum File Size</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>Maximum File Size</key>
-                        <value>
-                            <name>Maximum File Size</name>
-                        </value>
-                    </entry>
-                </descriptors>
-                <executionNode>PRIMARY</executionNode>
-                <lossTolerant>false</lossTolerant>
-                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
-                <penaltyDuration>30 sec</penaltyDuration>
-                <properties>
-                    <entry>
-                        <key>Input Directory</key>
-                        <value>/opt/nifi/nifi-current/fileprocessor</value>
-                    </entry>
-                    <entry>
-                        <key>File Filter</key>
-                        <value>[^\.].*</value>
-                    </entry>
-                    <entry>
-                        <key>Batch Size</key>
-                        <value>10</value>
-                    </entry>
-                    <entry>
-                        <key>Keep Source File</key>
-                        <value>true</value>
-                    </entry>
-                    <entry>
-                        <key>Recurse Subdirectories</key>
-                        <value>true</value>
-                    </entry>
-                    <entry>
-                        <key>Polling Interval</key>
-                        <value>0 sec</value>
-                    </entry>
-                    <entry>
-                        <key>Ignore Hidden Files</key>
-                        <value>true</value>
-                    </entry>
-                    <entry>
-                        <key>Minimum File Age</key>
-                        <value>0 sec</value>
-                    </entry>
-                    <entry>
-                        <key>Minimum File Size</key>
-                        <value>0 B</value>
-                    </entry>
-                </properties>
-                <retryCount>10</retryCount>
-                <runDurationMillis>0</runDurationMillis>
-                <schedulingPeriod>1 sec</schedulingPeriod>
-                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                <yieldDuration>1 sec</yieldDuration>
-            </config>
-            <executionNodeRestricted>false</executionNodeRestricted>
-            <name>GetFile</name>
-            <relationships>
-                <autoTerminate>false</autoTerminate>
-                <name>success</name>
-                <retry>false</retry>
-            </relationships>
-            <state>RUNNING</state>
-            <style/>
-            <type>org.apache.nifi.processors.standard.GetFile</type>
-        </processors>
-        <processors>
-            <id>71178470-16f7-3997-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>501b41e7-35de-31b1-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <position>
                 <x>568.0</x>
                 <y>208.0</y>
@@ -945,6 +704,9 @@
                 <penaltyDuration>30 sec</penaltyDuration>
                 <properties>
                     <entry>
+                        <key>mongo-client-service</key>
+                    </entry>
+                    <entry>
                         <key>Mongo URI</key>
                         <value>mongodb://172.23.0.10:27017</value>
                     </entry>
@@ -957,6 +719,9 @@
                         <value>earthquakes</value>
                     </entry>
                     <entry>
+                        <key>ssl-context-service</key>
+                    </entry>
+                    <entry>
                         <key>ssl-client-auth</key>
                         <value>REQUIRED</value>
                     </entry>
@@ -967,6 +732,12 @@
                     <entry>
                         <key>Upsert</key>
                         <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Update Query Key</key>
+                    </entry>
+                    <entry>
+                        <key>putmongo-update-query</key>
                     </entry>
                     <entry>
                         <key>put-mongo-update-mode</key>
@@ -1004,8 +775,308 @@
             <type>org.apache.nifi.processors.mongodb.PutMongo</type>
         </processors>
         <processors>
-            <id>973d60b4-2ed2-334c-0000-000000000000</id>
-            <parentGroupId>88f0d61b-220b-3382-0000-000000000000</parentGroupId>
+            <id>83043986-29b9-3609-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.25.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Input Directory</key>
+                        <value>
+                            <name>Input Directory</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>File Filter</key>
+                        <value>
+                            <name>File Filter</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Filter</key>
+                        <value>
+                            <name>Path Filter</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>
+                            <name>Batch Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Keep Source File</key>
+                        <value>
+                            <name>Keep Source File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Recurse Subdirectories</key>
+                        <value>
+                            <name>Recurse Subdirectories</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Polling Interval</key>
+                        <value>
+                            <name>Polling Interval</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Ignore Hidden Files</key>
+                        <value>
+                            <name>Ignore Hidden Files</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Age</key>
+                        <value>
+                            <name>Minimum File Age</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Age</key>
+                        <value>
+                            <name>Maximum File Age</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Size</key>
+                        <value>
+                            <name>Minimum File Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Size</key>
+                        <value>
+                            <name>Maximum File Size</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>PRIMARY</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Input Directory</key>
+                        <value>/opt/nifi/nifi-current/files</value>
+                    </entry>
+                    <entry>
+                        <key>File Filter</key>
+                        <value>[^\.].*</value>
+                    </entry>
+                    <entry>
+                        <key>Path Filter</key>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>10</value>
+                    </entry>
+                    <entry>
+                        <key>Keep Source File</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Recurse Subdirectories</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Polling Interval</key>
+                        <value>0 sec</value>
+                    </entry>
+                    <entry>
+                        <key>Ignore Hidden Files</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Age</key>
+                        <value>0 sec</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Age</key>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Size</key>
+                        <value>0 B</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Size</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>1 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>GetFile</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.GetFile</type>
+        </processors>
+        <processors>
+            <id>ce0bf135-bc29-3a95-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>552.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.25.0</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>6</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>
+                            <name>jolt-transform</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                        <value>
+                            <dependencies>
+<dependentValues>jolt-transform-custom</dependentValues>
+<propertyName>jolt-transform</propertyName>
+                            </dependencies>
+                            <name>jolt-custom-class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                        <value>
+                            <dependencies>
+<dependentValues>jolt-transform-custom</dependentValues>
+<propertyName>jolt-transform</propertyName>
+                            </dependencies>
+                            <name>jolt-custom-modules</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>
+                            <name>jolt-spec</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>
+                            <name>Transform Cache Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>
+                            <name>pretty_print</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Max String Length</key>
+                        <value>
+                            <name>Max String Length</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>jolt-transform</key>
+                        <value>jolt-transform-chain</value>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-class</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-custom-modules</key>
+                    </entry>
+                    <entry>
+                        <key>jolt-spec</key>
+                        <value>[{
+	"operation": "shift",
+	"spec": {
+		"EventID": "id",
+		"Latitude": "geoLocation.lat",
+		"Longitude": "geoLocation.lon",
+		"Depth": "depth",
+      	"Author" : "author",
+		"MagType": "magnitude.type",
+      	"Magnitude": "magnitude.grade",
+		"EventLocationName": "place"
+	}
+}, {
+	"operation": "modify-overwrite-beta",
+	"spec": {
+		"geoLocation": "=concat(@(1,geoLocation.lat), ', ', @(1,geoLocation.lon))",
+      	"magnitude": "=concat(@(1,magnitude.type), ', ', @(1,magnitude.grade))"
+	}
+}]</value>
+                    </entry>
+                    <entry>
+                        <key>Transform Cache Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>pretty_print</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Max String Length</key>
+                        <value>20 MB</value>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>50</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>JoltTransformJSON</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.JoltTransformJSON</type>
+        </processors>
+        <processors>
+            <id>f09c29d1-13b2-37b6-0000-000000000000</id>
+            <parentGroupId>f70f2958-cb7c-3efe-0000-000000000000</parentGroupId>
             <position>
                 <x>0.0</x>
                 <y>280.0</y>
@@ -1049,11 +1120,11 @@
                 <properties>
                     <entry>
                         <key>Record Reader</key>
-                        <value>2a03844a-848e-3857-0000-000000000000</value>
+                        <value>277de66c-2e2e-360a-0000-000000000000</value>
                     </entry>
                     <entry>
                         <key>Record Writer</key>
-                        <value>8c80abe0-c7bf-3be6-0000-000000000000</value>
+                        <value>b24b34d7-afc7-3d3d-0000-000000000000</value>
                     </entry>
                     <entry>
                         <key>Records Per Split</key>
@@ -1061,7 +1132,7 @@
                     </entry>
                 </properties>
                 <retryCount>10</retryCount>
-                <runDurationMillis>0</runDurationMillis>
+                <runDurationMillis>25</runDurationMillis>
                 <schedulingPeriod>0 sec</schedulingPeriod>
                 <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
                 <yieldDuration>1 sec</yieldDuration>
@@ -1088,5 +1159,5 @@
             <type>org.apache.nifi.processors.standard.SplitRecord</type>
         </processors>
     </snippet>
-    <timestamp>04/11/2024 09:48:32 UTC</timestamp>
+    <timestamp>04/26/2024 08:46:50 UTC</timestamp>
 </template>
