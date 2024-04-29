@@ -74,6 +74,16 @@ cd scripts
 .\configuracion_entorno_k8s.ps1
 ```
 
+Para acceder a la interfaz gráfica de cada uno de los nodos es preciso realizar lo siguiente:
+
+```
+minikube service nifi01-service --url
+minikube service nifi02-service --url
+minikube service nifi03-service --url
+```
+
+Cada comando anterior, habilita una dirección IP determinada a cada uno de los nodos para que el servicio sea accesible desde el exterior.
+
 
 
 
