@@ -12,15 +12,31 @@ spec:
   selector:
     matchLabels:
       app: mongo
-  # strategy: {}
   template:
     metadata:
       labels:
         app: mongo
     spec:
+      hostname: mongo-pod
       containers:
         - image: mongo
           name: mongo
           resources: {}
       restartPolicy: Always
 status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  namespace: default 
+spec:
+  selector:
+    app: mongo
+  ports:
+    - protocol: TCP
+      name: "port"
+      port: 80  
+      targetPort: 8080  
+

@@ -54,15 +54,14 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  name: nifi02
-  namespace: default
+  name: nifi02-service
+  namespace: default 
 spec:
   selector:
     app: nifi02
   ports:
-    - name: "6979"
-      port: 6979
-      targetPort: 8080
-
-status:
-  loadBalancer: {}
+    - protocol: TCP
+      name: "port"
+      port: 80  
+      targetPort: 8080  
+  type: LoadBalancer
