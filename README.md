@@ -17,12 +17,12 @@ docker compose up
 ```
 
 <p align="justify">
-Por último, para terminar de configurar el entorno de forma correcta, se han habilitado dos scripts de configuración. El primero <em>init_mongo.sh</em>, tiene como objetivo inicializar la base de datos en la que se almacenarán los datos cargados por NiFi de forma automática. Este script se carga en el contenedor de mongo para su posterior empleo. El segundo script facilitado, <em>configuracion_entorno_docker.ps1</em>, está pensado para su ejecución desde el PowerShell de Windows, para ejecutar el script de inicialización y para otorgar todos los permisos necesarios a los archivos csv para que puedan ser leídos por NiFi.
+Por último, para terminar de configurar el entorno de forma correcta, se han habilitado dos scripts de configuración. El primero <em>init_mongo.sh</em>, tiene como objetivo inicializar la base de datos en la que se almacenarán los datos cargados por NiFi de forma automática. Este script se carga en el contenedor de mongo para su posterior empleo. El segundo script facilitado, <em>configuracion_mongo_docker.ps1</em>, está pensado para su ejecución desde el PowerShell de Windows, para ejecutar el script de inicialización..
 </p>
 
 ```
 cd scripts
-.\configuracion_entorno_docker.ps1
+.\configuracion_mongo_docker.ps1
 ```
 
 ## Despliegue en Kubernetes
@@ -73,6 +73,16 @@ Una vez desplegadas todas las instancias correspondientes, se proporciona un scr
 cd scripts
 .\configuracion_entorno_k8s.ps1
 ```
+
+Para acceder a la interfaz gráfica de cada uno de los nodos es preciso realizar lo siguiente:
+
+```
+minikube service nifi01-service --url
+minikube service nifi02-service --url
+minikube service nifi03-service --url
+```
+
+Cada comando anterior, habilita una dirección IP determinada a cada uno de los nodos para que el servicio sea accesible desde el exterior.
 
 
 
