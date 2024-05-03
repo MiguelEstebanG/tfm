@@ -77,9 +77,9 @@ cd scripts
 Para acceder a la interfaz gráfica de cada uno de los nodos es preciso realizar lo siguiente:
 
 ```
-minikube service nifi01-service -n namespace --url
-minikube service nifi02-service -n namespace --url
-minikube service nifi03-service -n namespace --url
+minikube service nifi01-service -n nifi --url
+minikube service nifi02-service -n nifi --url
+minikube service nifi03-service -n nifi --url
 ```
 
 Cada comando anterior, habilita una dirección IP determinada a cada uno de los nodos para que el servicio sea accesible desde el exterior.
