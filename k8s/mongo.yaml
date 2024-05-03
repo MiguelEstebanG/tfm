@@ -17,25 +17,38 @@ spec:
       labels:
         app: mongo
     spec:
-      hostname: mongo-pod
       containers:
         - image: mongo
           name: mongo
           resources: {}
+          ports:
+            - containerPort: 27017
       restartPolicy: Always
 status: {}
 
 ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: mongo-service
+#   namespace: nifi 
+# spec:
+#   selector:
+#     app: mongo
+#   ports:
+#     - protocol: TCP
+#       name: "port"
+#       port: 80  
+#       targetPort: 8080
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: mongo
   namespace: nifi 
 spec:
-  selector:
-    app: mongo
   ports:
-    - protocol: TCP
-      name: "port"
-      port: 80  
-      targetPort: 8080  
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: mongo  
