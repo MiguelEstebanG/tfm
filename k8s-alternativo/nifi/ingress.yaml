@@ -8,15 +8,13 @@ metadata:
   annotations:
     app.kubernetes.io/name: nifi
     app.kubernetes.io/part-of: nifi
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      server_tokens off;
 
 spec:
+  ingressClassName: nginx
   rules:
-  - host: nifi
-    http:
+  - http:
       paths:
-      - path: /
+      - path: /nifi
         pathType: Prefix
         backend:
           service:

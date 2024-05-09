@@ -1,29 +1,104 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: nifi
+  name: nifi-0
   labels:
     app: nifi
 
 spec:
-  type: ClusterIP
+  type: NodePort   # Cambiar el tipo de servicio a NodePort
   selector:
     app: nifi
   ports:
   - protocol: TCP
     port: 6342
     targetPort: 6342
+    nodePort: 30000  # Definir un puerto específico para NodePort (por ejemplo, 30000)
     name: cluster-lb
   - protocol: TCP
     port: 8080
     targetPort: 8080
+    nodePort: 30001  # Definir un puerto específico para NodePort (por ejemplo, 30001)
     name: http
   - protocol: TCP
     port: 8443
     targetPort: 8443
+    nodePort: 30002  # Definir un puerto específico para NodePort (por ejemplo, 30002)
     name: https
   - protocol: TCP
     port: 11443
     targetPort: 11443
+    nodePort: 30003  # Definir un puerto específico para NodePort (por ejemplo, 30003)
     name: cluster
+  selector:
+    statefulset.kubernetes.io/pod-name: nifi-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi-1
+  labels:
+    app: nifi
+
+spec:
+  type: NodePort   # Cambiar el tipo de servicio a NodePort
+  selector:
+    app: nifi
+  ports:
+  - protocol: TCP
+    port: 6342
+    targetPort: 6342
+    nodePort: 30004  # Definir un puerto específico para NodePort (por ejemplo, 30000)
+    name: cluster-lb
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30005  # Definir un puerto específico para NodePort (por ejemplo, 30001)
+    name: http
+  - protocol: TCP
+    port: 8443
+    targetPort: 8443
+    nodePort: 30006  # Definir un puerto específico para NodePort (por ejemplo, 30002)
+    name: https
+  - protocol: TCP
+    port: 11443
+    targetPort: 11443
+    nodePort: 30007  # Definir un puerto específico para NodePort (por ejemplo, 30003)
+    name: cluster
+  selector:
+    statefulset.kubernetes.io/pod-name: nifi-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi-2
+  labels:
+    app: nifi
+
+spec:
+  type: NodePort   # Cambiar el tipo de servicio a NodePort
+  selector:
+    app: nifi
+  ports:
+  - protocol: TCP
+    port: 6342
+    targetPort: 6342
+    nodePort: 30008  # Definir un puerto específico para NodePort (por ejemplo, 30000)
+    name: cluster-lb
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30009  # Definir un puerto específico para NodePort (por ejemplo, 30001)
+    name: http
+  - protocol: TCP
+    port: 8443
+    targetPort: 8443
+    nodePort: 30010  # Definir un puerto específico para NodePort (por ejemplo, 30002)
+    name: https
+  - protocol: TCP
+    port: 11443
+    targetPort: 11443
+    nodePort: 30011  # Definir un puerto específico para NodePort (por ejemplo, 30003)
+    name: cluster
+  selector:
+    statefulset.kubernetes.io/pod-name: nifi-2

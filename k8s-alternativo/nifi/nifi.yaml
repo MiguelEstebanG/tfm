@@ -17,8 +17,10 @@ spec:
         app: nifi
     
     spec:
+      automountServiceAccountToken: false
+      enableServiceLinks: false
       setHostnameAsFQDN: true
-      # dnsPolicy: ClusterFirstWithHostNet
+      dnsPolicy: ClusterFirstWithHostNet
       restartPolicy: Always
       
       initContainers:
@@ -68,15 +70,15 @@ spec:
               fieldRef:
                 fieldPath: metadata.name #Pod name
           - name: NIFI_UI_BANNER_TEXT
-            value: $(POD_NAME) #Pod name for banner
+            value: $(POD_NAME)
           - name: NIFI_WEB_HTTP_HOST
-            value: $(POD_NAME).nifi.default.svc.cluster.local #Pod fqdn as web host
+            value: $(POD_NAME)  
           - name: NIFI_CLUSTER_NODE_ADDRESS
-            value: $(POD_NAME).nifi.default.svc.cluster.local #Pod fqdn as node address
+            value: $(POD_NAME)
           - name: NIFI_REMOTE_INPUT_SOCKET_HOST
-            value: $(POD_NAME).nifi.default.svc.cluster.local #Pod fqdn as input socket address
+            value: $(POD_NAME)
           - name: NIFI_REMOTE_INPUT_HOST
-            value: $(POD_NAME).nifi.default.svc.cluster.local #Pod fqdn as input host address
+            value: $(POD_NAME)
           - name: HOSTNAME
             value: $(POD_IP) #Pod ip as hostname
           - name: NODE_IDENTITY
@@ -106,4 +108,3 @@ spec:
         - name: data
           emptyDir:
             sizeLimit: 3Gi
-          

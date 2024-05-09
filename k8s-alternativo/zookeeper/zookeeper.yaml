@@ -6,6 +6,9 @@ metadata:
   labels:
     name: zookeeper
     app: zookeeper
+  annotations:
+    app.kubernetes.io/name: zookeeper
+    app.kubernetes.io/part-of: nifi
 
 spec:
   selector:
@@ -16,8 +19,11 @@ spec:
       labels:
         app: zookeeper
     spec:
+      automountServiceAccountToken: false
+      enableServiceLinks: false
       setHostnameAsFQDN: true
-      restartPolicy: Always
+      dnsPolicy: ClusterFirstWithHostNet
+      restartPolicy: Always      
 
       containers:
       - name: zookeeper
