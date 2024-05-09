@@ -87,24 +87,10 @@ spec:
           - configMapRef:
               name: nifi-configmap #Import NiFi configuration variables
               optional: false
-        volumeMounts:
-          - name: data
-            mountPath: /opt/nifi/nifi-current/data
-            subPath: data
-            readOnly: false
-          - name: data
-            mountPath: /opt/nifi/nifi-current/keytool
-            subPath: keytool
-            readOnly: false
         resources:
           requests:
-            cpu: 400m
-            memory: 2Gi
+            cpu: 800m
+            memory: 4Gi
           limits:
-            cpu: 400m
-            memory: 2Gi
-        
-      volumes:
-        - name: data
-          emptyDir:
-            sizeLimit: 3Gi
+            cpu: 800m
+            memory: 4Gi
