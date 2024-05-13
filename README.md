@@ -30,7 +30,7 @@ De igual forma, si el despliegue se está realizando desde un entorno LINUX/UNIX
 </p>
 
 ```
-cd scripts
+cd 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\k8s'
 chmod +x configuracion_mongo_docker.sh
 ./configuracion_mongo_docker.sh
 ```
