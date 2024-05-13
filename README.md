@@ -30,7 +30,7 @@ De igual forma, si el despliegue se está realizando desde un entorno LINUX/UNIX
 </p>
 
 ```
-cd 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\k8s'
+cd scripts
 chmod +x configuracion_mongo_docker.sh
 ./configuracion_mongo_docker.sh
 ```
@@ -60,7 +60,7 @@ Esto permite desplegar todas las instancias necesarias para el despliegue. Una v
 </p>
 
 ```
-cd scripts
+cd 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\k8s\scripts'
 .\configuracion_entorno_k8s.ps1
 ```
 
