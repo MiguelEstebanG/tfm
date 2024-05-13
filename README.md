@@ -35,12 +35,12 @@ chmod +x configuracion_mongo_docker.sh
 ./configuracion_mongo_docker.sh
 ```
 
-## Despliegue en Kubernetes
+## Despliegue local en Kubernetes
 
 El despliegue del cluster en Kubernetes se realiza empleando Minikube. Para ello, en primer lugar, es necesario arrancar minikube con unas prestaciones superiores a las proporcionadas por defecto.
 
 ```
-minikube start --cpus 6 --memory 15000
+minikube start --cpus 12 --memory 15000
 minikube dashboard
 minikube stop
 ```
