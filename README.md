@@ -35,53 +35,32 @@ chmod +x configuracion_mongo_docker.sh
 ./configuracion_mongo_docker.sh
 ```
 
-## Despliegue en Kubernetes
+## Despliegue local en Kubernetes
 
 El despliegue del cluster en Kubernetes se realiza empleando Minikube. Para ello, en primer lugar, es necesario arrancar minikube con unas prestaciones superiores a las proporcionadas por defecto.
 
 ```
-minikube start --cpus 6 --memory 12000
+minikube start --cpus 12 --memory 15000
 minikube dashboard
 minikube stop
 ```
 <p align="justify">
-Una vez arrancado el entorno, se procede a desplegar el cluster por medio de los archivos yaml proporcionados para ello. En primer lugar, se accede a la carpeta 'k8s' donde se encuentran disponibles todos los archivos necesarios, en mi caso:
+Una vez arrancado el entorno, se procede a desplegar el cluster por medio de los archivos yaml proporcionados. Para ello, nos situamos en la ruta base del proyecto. Tras esto, es preciso realizar lo siguiente:
 </p>
 
 ```
-cd 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\k8s'
+kubectl apply -f .\k8s\mongo\ -f .\k8s\nifi\ -f .\k8s\zookeeper\
 ```
 
-Tras esto se hace uso de los diferentes archivos yaml para levantar el entorno:
 
 
- Para desplegar la instancia de mongo:
-
-  ```
-  kubectl apply -f .\mongo.yaml
-  ```
-
- Para desplegar el entorno zookeeper:
-
-  ```
-  kubectl apply -f .\zookeeper.yaml
-  ```
-
- Para desplegar los tres nodos correspondientes:
-
-  ```
-  kubectl apply -f .\nifi01.yaml
-  kubectl apply -f .\nifi02.yaml
-  kubectl apply -f .\nifi03.yaml
-  ```
-
-
+ 
 <p align="justify">
-Una vez desplegadas todas las instancias correspondientes, se proporciona un script <em>configuracion_entorno_k8s.ps1</em>, pensado para su ejecución desde el PowerShell de Windows, que permitirá "enviar" a los diferentes pods de los nodos de NiFi el archivo csv y otorgará a estos archivos todos los permisos necesarios para que puedan ser leídos por NiFi. Además, mediante el script <em>init_mongo.sh</em> se realiza la configuración de la base de datos de mongo. Para ello, es necesario realizar lo siguiente: 
+Esto permite desplegar todas las instancias necesarias para el despliegue. Una vez desplegadas todas las instancias, se proporciona un script <em>configuracion_entorno_k8s.ps1</em>, pensado para su ejecución desde el PowerShell de Windows, que permitirá "enviar" a los diferentes pods de los nodos de NiFi el archivo csv y otorgará a estos archivos todos los permisos necesarios para que puedan ser leídos por NiFi. Además, mediante el script <em>init_mongo.sh</em> se realiza la configuración de la base de datos de mongo. Para ello, es necesario realizar lo siguiente: 
 </p>
 
 ```
-cd scripts
+cd k8s\scripts
 .\configuracion_entorno_k8s.ps1
 ```
 
@@ -90,7 +69,7 @@ Como alternativa a esto, si el despliegue se está realizando desde un entorno L
 </p>
 
 ```
-cd scripts
+cd k8s/scripts
 chmod +x configuracion_entorno_k8s.sh
 ./configuracion_entorno_k8s.sh
 ```
@@ -98,9 +77,9 @@ chmod +x configuracion_entorno_k8s.sh
 Para acceder a la interfaz gráfica de cada uno de los nodos es preciso realizar lo siguiente:
 
 ```
-minikube service nifi01-service -n nifi --url
-minikube service nifi02-service -n nifi --url
-minikube service nifi03-service -n nifi --url
+minikube service nifi-0 --url
+minikube service nifi-1 --url
+minikube service nifi-2 --url
 ```
 
 Cada comando anterior, habilita una dirección IP determinada a cada uno de los nodos para que el servicio sea accesible desde el exterior.
