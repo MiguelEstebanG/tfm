@@ -60,7 +60,7 @@ Esto permite desplegar todas las instancias necesarias para el despliegue. Una v
 </p>
 
 ```
-cd 'C:\Users\Usuario\Desktop\Miguel_Esteban_Gutierrez\MUIT\TFM\k8s\scripts'
+cd k8s\scripts
 .\configuracion_entorno_k8s.ps1
 ```
 
@@ -69,7 +69,7 @@ Como alternativa a esto, si el despliegue se está realizando desde un entorno L
 </p>
 
 ```
-cd scripts
+cd k8s/scripts
 chmod +x configuracion_entorno_k8s.sh
 ./configuracion_entorno_k8s.sh
 ```
