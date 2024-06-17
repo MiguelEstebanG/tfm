@@ -86,6 +86,11 @@ Cada comando anterior, habilita una dirección IP determinada a cada uno de los 
 
 
 ## Despliegue kubernetes en VM AZURE con minikube
+En primer lugar, para acceder a la MV es necesario ejecutar el siguiente comando:
+
+```
+ ssh -i C:\Users\Usuario\Downloads\tfm-ubuntu_key.pem azureuser@4.212.8.69
+```
 
 Para poder acceder al dashboard desde la maquina local, realizamos los siguientes pasos:
 
