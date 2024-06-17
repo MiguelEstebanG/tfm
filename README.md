@@ -87,8 +87,14 @@ Cada comando anterior, habilita una dirección IP determinada a cada uno de los 
 
 ## Despliegue kubernetes en VM AZURE con minikube
 
-Para poder acceder al dashboard desde la maquina local, ejecutamos el siguiente comando:
+Para poder acceder al dashboard desde la maquina local, realizamos los siguientes pasos:
 
+En primer lugar, ejecutamos en una terminal lo siguiente:
+```
+kubectl proxy
+```
+
+Alternativamente, en una nueva terminal ejecutamos:
 ```
 ssh -i "C:\Users\Usuario\Downloads\tfm-ubuntu_key.pem" -L 12345:localhost:8001 azureuser@4.212.8.69
 ```
