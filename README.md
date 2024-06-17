@@ -85,6 +85,19 @@ minikube service nifi-2 --url
 Cada comando anterior, habilita una dirección IP determinada a cada uno de los nodos para que el servicio sea accesible desde el exterior.
 
 
+## Despliegue kubernetes en VM AZURE con minikube
+
+Para poder acceder al dashboard desde la maquina local, ejecutamos el siguiente comando:
+
+```
+ssh -i "C:\Users\Usuario\Downloads\tfm-ubuntu_key.pem" -L 12345:localhost:8001 azureuser@4.212.8.69
+```
+
+Tras esto, accedemos a la siguiente URL donde se encuentra el dashboard:
+
+```
+http://127.0.0.1:12345/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default
+```
 
 
 
