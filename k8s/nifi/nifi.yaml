@@ -87,10 +87,3 @@ spec:
           - configMapRef:
               name: nifi-configmap #Import NiFi configuration variables
               optional: false
-        resources:
-          requests:
-            cpu: 800m
-            memory: 4Gi
-          limits:
-            cpu: 800m
-            memory: 4Gi
