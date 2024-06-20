@@ -39,14 +39,7 @@ spec:
           - configMapRef:
               name: nifi-configmap
               optional: false
-          resources:
-            requests:
-              cpu: 20m
-              memory: 10Mi
-            limits:
-              cpu: 20m
-              memory: 10Mi
-      
+          
       containers:
       - name: nifi
         image: docker.io/apache/nifi:1.25.0
