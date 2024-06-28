@@ -6,7 +6,7 @@ metadata:
     app: nifi
 
 spec:
-  type: NodePort   # Cambiar el tipo de servicio a NodePort
+  type: NodePort   
   selector:
     app: nifi
   ports:
@@ -41,7 +41,7 @@ metadata:
     app: nifi
 
 spec:
-  type: NodePort   # Cambiar el tipo de servicio a NodePort
+  type: NodePort  
   selector:
     app: nifi
   ports:
@@ -76,7 +76,7 @@ metadata:
     app: nifi
 
 spec:
-  type: NodePort   # Cambiar el tipo de servicio a NodePort
+  type: NodePort   
   selector:
     app: nifi
   ports:

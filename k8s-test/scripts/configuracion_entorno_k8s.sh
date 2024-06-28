@@ -23,7 +23,8 @@ kubectl cp Italian_Catalogue_earthquakes.csv nifi-2:/opt/nifi/nifi-current/csv
 
 kubectl exec -it nifi-2 -- chmod -R 777 /opt/nifi/nifi-current/csv
 
-cd ../../k8s/scripts
+
+cd ../../k8s-test/scripts
 
 # Copiar el archivo de configuracion de mongo y ejecucion en el nodo
 kubectl exec -it mongo-0 -- mkdir /scripts
@@ -32,4 +33,4 @@ kubectl cp init_mongo.sh mongo-0:/scripts
 
 kubectl exec -it mongo-0 -- chmod +x /scripts/init_mongo.sh
 
-kubectl exec -it mongo-0 -- /scripts/init_mongo.sh
+kubectl exec -it mongo-0 -- /scripts/init_mongo.sh 
