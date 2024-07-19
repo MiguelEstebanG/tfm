@@ -1,0 +1,30 @@
+version: "3"
+services:
+  nifi:
+    container_name: nifiNode
+    image: apache/nifi:1.25.0
+    ports:
+      - 6980:8080
+    networks:
+      - nifi_network
+    volumes:
+      - ../carpetas_varias/input/Italian_Catalogue_earthquakes.csv:/opt/nifi/nifi-current/files/csv
+    user: "root:root"
+    command: chmod -R 777 /opt/nifi/nifi-current/files
+    environment:
+      - NIFI_WEB_HTTP_PORT=8080
+      - NIFI_SENSITIVE_PROPS_KEY=tfmmiguel24nifi1
+  mongo:
+    image: mongo
+    container_name: mongo
+    networks:
+      nifi_network:
+        ipv4_address: 172.23.0.10
+    volumes:
+      - ./scripts/init_mongo.sh:/scripts/init_mongo.sh
+networks:
+  nifi_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
