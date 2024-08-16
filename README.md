@@ -119,7 +119,16 @@ En esta ocasión, el arranque del despliegue se llevará a cabo de forma manual 
 ```
 bin/nifi.sh run
 ```
-Con ello se inciarán cada uno de los nodos de forma progresiva y, tras cierto tiempo se desplegará el sistema correctamente. 
+Con ello se iniciarán cada uno de los nodos de forma progresiva y, tras cierto tiempo se desplegará el sistema correctamente. 
+
+Finalmente, para iniciar el servidor mongo y, tras instalar correctamente mongodb en el host deseado, es preciso ejecutar el siguiente comando en la VM's donde se quiera desplegar el servicio, en mi caso en el host <em>nifi01</em>:
+
+```
+mongo nifi01:27017
+```
+
+
+
 
 
 
