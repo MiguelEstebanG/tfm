@@ -2,7 +2,7 @@ version: "3"
 services:
   nifi:
     container_name: nifiNode
-    image: apache/nifi:1.25.0
+    image: nifi-docker-config
     ports:
       - 6980:8080
     networks:
